@@ -7,17 +7,44 @@
     <label >USERNAME : </label>
     <!-- using of class of bootstrap i.e form-control -->
     <!--two way binding by using ngModel -->
-    <input type="text" name="usename" class="form-control" [(ngModel)]="name1">
+    <input type="text" name="username" class="form-control" [(ngModel)]="name1" #username="ngModel" required
+    [class.is-invalid]="username.touched && username.invalid"><!--when touched and return back it displays in red-->
+    <!-- when mutiple usage of classes you have to declare in the above format -->
   </div>
+  <!-- PERFOROMING TEXT VALIDATION -->
+  <!--  USING NGMODEL PROPERTIES-->
+  touched = {{username.touched}},
+  untouched = {{username.untouched}},
+  valid = {{username.valid}},
+  invalid = {{username.invalid}},
+  pristine = {{username.pristine}},
+  dirty = {{username.dirty}}
   <div>
     <label >PHONE : </label>
-    <input type="text" name="phone" class="form-control" [(ngModel)]="phone1">
+    <input type="text" name="phone" class="form-control" [(ngModel)]="phone1" #phone="ngModel" required
+    [class.is-invalid]="phone.touched && phone.invalid">
   </div>
+  touched = {{phone.touched}},
+  untouched = {{phone.untouched}},
+  valid = {{phone.valid}},
+  invalid = {{phone.invalid}},
+  pristine = {{phone.pristine}},
+  dirty = {{phone.dirty}}
   <div>
     <label >EMAIL : </label>
-    <input type="text" name="email" class="form-control" [(ngModel)]="email1">
+    <input type="text" name="email" class="form-control" [(ngModel)]="email1" #email="ngModel" required
+    [class.is-invalid]="email.touched && email.invalid">
   </div>
+  touched = {{email.touched}},
+  untouched = {{email.untouched}},
+  valid = {{email.valid}},
+  invalid = {{email.invalid}},
+  pristine = {{email.pristine}},
+  dirty = {{email.dirty}}
+
+
   <!-- Class - name for buttons in bootstrap primary:blue success:green danger:red -->
+  <br>
   <input type="submit" value="SUBMIT" class="btn btn-primary">
 </form>
 <!-- Class - name for buttons in bootstrap 
