@@ -1,23 +1,24 @@
 <!-- EXPLICITLY TELLING TO ACT AS ANGULAR FORM  -->
-<form #userForm = "ngForm">
+<!-- PERFORMING EVENT CALLED ANGULAR SUBMIT -->
+<form #userform = "ngForm" (ngSubmit)="fun(userform.value)">
   <!--following string interpolation -->
-  {{userForm.value | json}} <!--using pipe operator-->
+  {{userform.value | json}} <!--using pipe operator-->
   <div>
     <label >USERNAME : </label>
     <!-- using of class of bootstrap i.e form-control -->
     <!--two way binding by using ngModel -->
-    <input type="text" name="usename" class="form-control" ngModel>
+    <input type="text" name="usename" class="form-control" [(ngModel)]="name1">
   </div>
   <div>
     <label >PHONE : </label>
-    <input type="text" name="phone" class="form-control" ngModel>
+    <input type="text" name="phone" class="form-control" [(ngModel)]="phone1">
   </div>
   <div>
     <label >EMAIL : </label>
-    <input type="text" name="email" class="form-control"ngModel>
+    <input type="text" name="email" class="form-control" [(ngModel)]="email1">
   </div>
   <!-- Class - name for buttons in bootstrap primary:blue success:green danger:red -->
-  <input type="button" value="SUBMIT" class="btn btn-primary">
+  <input type="submit" value="SUBMIT" class="btn btn-primary">
 </form>
 <!-- Class - name for buttons in bootstrap 
   primary:blue success:green danger:red -->
